@@ -3,7 +3,6 @@ import Root from "./components/Root";
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
 
-
 const router = createBrowserRouter([
   {
     path: "/",

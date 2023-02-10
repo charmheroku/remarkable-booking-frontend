@@ -9,6 +9,7 @@ import {
   LightMode,
   useColorMode,
   useColorModeValue,
+  Stack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
@@ -29,10 +30,19 @@ export default function Header() {
   const logoColor = useColorModeValue("red.500", "red.500");
   const Icon = useColorModeValue(FaMoon, FaSun);
   return (
-    <HStack
+    <Stack
       justifyContent={"space-between"}
+      alignItems="center"
       py={5}
-      px={10}
+      px={30}
+      direction={{
+        sm: "column",
+        md: "row",
+      }}
+      spacing={{
+        sm: 4,
+        md: 0,
+      }}
       borderBottomWidth={1}
     >
       <Box color={logoColor}>
@@ -56,6 +66,6 @@ export default function Header() {
       </HStack>
       <LoginModal isOpen={isLoginOpen} onClose={onLoginClose} />
       <SignUpModal isOpen={isSignUpOpen} onClose={onSignUpClose} />
-    </HStack>
+    </Stack>
   );
 }
